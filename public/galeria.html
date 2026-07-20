@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetrôPixels - Galeria</title>
+    <link rel="stylesheet" href="../src/assets/css/style.css"> 
+    <script src="../src/components/gallery.js" defer></script>
+</head>
+<body>
+    <!-- Logo e Navegação -->
+    <header class="header-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Retrô<span>Pixels</span></a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="cameras.html" class="nav-link active">Câmeras</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <div class="container">
+            
+            <!-- Navegação da Galeria (Botão Voltar) -->
+            <div class="gallery-nav">
+                <a href="cameras.html" class="btn-back"> Voltar para Câmeras</a>
+            </div>
+
+            <!-- Contêiner Preenchido pelo JavaScript -->
+            <div id="gallery-content">
+                <!-- Estado Inicial de Carregamento -->
+                <div class="gallery-camera-info">
+                    <h1 class="gallery-camera-title">Carregando Galeria...</h1>
+                    <p class="gallery-camera-desc">Buscando as fotografias analógicas no arquivo...</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <a href="index.html" class="footer-logo">Retrô<span>Pixels</span></a>
+            <p class="footer-text">&copy; 2026 RetrôPixels. Feito com paixão pela fotografia de época.</p>
+            <p class="footer-text">Autor: Geovana Vincensi</p>
+        </div>
+    </footer>
+
+</body>
+</html>

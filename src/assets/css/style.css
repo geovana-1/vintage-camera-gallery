@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+:root {
+    --bg-color: #faf7f2;
+    --text-color: #1e1c19;   
+    --text-muted: #6e655c;    
+    --accent-color: #c08c5c;   
+    --accent-hover: #a17043;
+     --shadow-sm: 0 4px 12px rgba(30, 28, 25, 0.04);
+    --shadow-md: 0 10px 30px rgba(30, 28, 25, 0.08);
+    --transition-smooth: all 0.4s;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que bordas não aumentem o tamanho final da caixa */
+}
+
+body {
+    font-family: 'Playfair Display', Georgia, serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Container geral da página*/
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.header-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(250, 247, 242, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 0;
+    transition: var(--transition-smooth);
+}
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-family: 'Kalnia', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    margin-left: 3%;
+}
+.logo span {
+    color: var(--accent-color);
+}
+.logo:hover {
+    opacity: 0.85;
+}
+.nav-menu{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin-right: 45px;
+}
+.nav-link{
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+    position: relative;
+    padding: 5px 0;
+    transition: var(--transition-smooth);
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--accent-color);
+    transition: var(--transition-smooth);
+}
+.nav-link:hover {
+    color: var(--accent-color);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+.nav-link.active {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+main {
+    flex: 1;
+    padding: 60px 0 100px 0;
+}
+.intro-section {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+.intro-text-wrapper {
+    max-width: 650px;
+}
+.intro-tag {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+.intro-title {
+    font-family: 'Kalnia', serif;
+    font-size: 3.2rem;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+.intro-p{
+    margin-bottom: 35px;
+    text-align: justify;
+}
+.btn-primary {
+    display: inline-block;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    padding: 14px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid var(--text-color);
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+.intro-image-wrapper{
+     position: relative;
+     border-radius: 12px;
+     overflow: hidden;
+     object-fit: cover;
+     transition: var(--transition-smooth);
+}
+.intro-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+/* Rodapé */
+footer {
+    border-top: 1px solid var(--border-color);
+    padding: 40px 0;
+    text-align: center;
+    background-color: #f6f2eb;
+}
+
+.footer-logo {
+    font-family: 'Kalnia', serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.footer-logo span {
+    color: var(--accent-color);
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Página das Câmeras */
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+}
+.section-title {
+    font-family: 'Kalnia', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.section-subtitle {
+    font-size: 1.1rem;
+}
+/* Grid de Cards das Câmeras */
+.cameras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+.camera-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+}
+.camera-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-color);
+}
+.camera-img-container {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    background-color: #e6dfd5;
+}
+.camera-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.1);
+    transition: var(--transition-smooth);
+}
+.camera-card-info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.camera-year {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.camera-name {
+    font-family: 'Kalnia', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-color);
+}
+.camera-desc {
+    font-size: 0.98rem;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+.btn-card {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
+}
+.camera-card:hover .btn-card {
+    background-color:#a17043;
+    border: transparent;
+    color: var(--bg-color);
+}
+
+/* Página da Galeria */
+.gallery-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+.btn-back {
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    text-decoration: none;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 5px;
+
+}
+.btn-back:hover {
+    border-radius: 4px;
+    border: 1px solid;
+    border: #1e1c19;
+}
+.gallery-camera-info {
+    max-width: 800px;
+    margin-bottom: 50px;
+}
+.gallery-camera-title {
+    font-family: 'Kalnia', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.gallery-camera-desc {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+/* Grid de Fotos */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Grid base */
+    gap: 30px;
+}
+.gallery-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    background-color: var(--border-color);
+    transition: var(--transition-smooth);
+}
+/* Tamanho das fotos */
+.gallery-item.large {
+    grid-column: span 2;
+    aspect-ratio: 16 / 9;
+}
+.gallery-item.normal {
+    aspect-ratio: 4 / 3;
+}
+.gallery-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition-smooth);
+}
+.gallery-item:hover .gallery-photo {
+    transform: scale(1.04);
+}
+
+/* Overlay com créditos da foto */
+.photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(30, 28, 25, 0.8) 0%, rgba(30, 28, 25, 0.2) 60%, rgba(30, 28, 25, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 2;
+    padding: 25px;
+    opacity: 0;
+    transition: var(--transition-smooth);
+}
+
+.gallery-item:hover .photo-overlay {
+    opacity: 1;
+}
+.photo-author {
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+.photo-location {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85rem;
+    font-style: italic;
+}
+/* Estado de Erro na Galeria */
+.error-container {
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.error-title {
+    font-family: 'Kalnia', serif;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.error-text {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
